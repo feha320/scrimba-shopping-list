@@ -30,7 +30,7 @@ onValue(shoppingItemsInDB, function(snapshot) {
     let currentItem = itemsArray[i];
     let currentItemID = currentItem[0];
     let currentItemValue = currentItem[1];
-    appendItem(currentItemValue);
+    appendItem(currentItem);
   }
 })
 
@@ -38,9 +38,18 @@ function clearMainInputEl() {
   mainInputEl.value = "";
 }
 
-function appendItem(itemValue) {
-  shoppingListEl.innerHTML += `<li class="basic-style">${itemValue}</li>`
+function appendItem(item) {
+  
+  let itemID = item[0];
+  let itemValue = item[1];
+  let newEl = document.createElement("li");
+  newEl.classList.add("basic-style");
+  newEl.textContent = itemValue;
+  shoppingListEl.append(newEl);
+
 }
+
+
 function clearItems() {
   shoppingListEl.innerHTML = ""
 }
