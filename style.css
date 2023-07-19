@@ -68,6 +68,11 @@ html {
   font-size: 1.25rem;
 }
 
+.completed {
+  text-decoration: line-through;
+  background: lightgray;
+}
+
 .input-field {
   color: var(--clr-input);
   background: var(--clr-bg-input);
